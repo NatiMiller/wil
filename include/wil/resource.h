@@ -93,7 +93,12 @@ namespace wil
             }
         }
 
-        //! last_error_context doesn't own a concrete resource, so therefore
+        DWORD get_saved_error()
+        {
+            return m_error;
+        }
+        
+		//! last_error_context doesn't own a concrete resource, so therefore
         //! it just disarms its destructor and returns void.
         void release() WI_NOEXCEPT
         {
